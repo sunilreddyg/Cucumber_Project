@@ -1,0 +1,152 @@
+Cucumber:-->
+
+	Cucumber is a testing tool that supports Behavior Driven Development (BDD) framework. 
+	It defines application behavior using simple English text, defined by a language called Gherkin.
+
+
+Advantages of Cucumber Over Other Tools:-->
+
+1. Cucumber supports different languages like Java,.net and Ruby.
+2. It allows the test script to be written without knowledge of any code, 
+	It allows the involvement of non-programmers as well.
+3. Due to simple test script architecture, Cucumber provides code reusability.
+
+
+=============================================================================
+Given −
+
+	It describes the pre-requisite for the test to be executed.
+	Example − GIVEN I am a Facebook user
+==============================================================================
+
+When −
+	It defines the trigger point for any test scenario execution.
+	Example − WHEN I enter "<username>"
+==============================================================================
+Then −	
+	Then holds the expected result for the test to be executed.
+	Example − THEN login should be successful.
+==============================================================================
+And −
+
+	It provides the logical AND condition between any two statements. 
+	AND can be used in conjunction with GIVEN, WHEN and THEN statement.
+
+	Example − WHEN I enter my "<username>" AND I enter my "<password>"
+=============================================================================
+But −
+
+	It signifies logical OR condition between any two statements. 
+	OR can be used in conjunction with GIVEN, WHEN and THEN statement.
+
+	Example − THEN login should be successful. BUT home page should not be missing.
+==============================================================================
+Scenario −
+
+	Details about the scenario under the test needs to be captured after the keyword “Scenario:”
+
+	Example −
+
+		Scenario: Verifying login test
+
+			GIVEN I am a Facebook user
+			AND Enter valid url of facebook
+			WHEN I enter my username
+			AND I enter my password
+			THEN login should be successful.
+			BUT home page should not be missing.
+===============================================================================================
+Background
+	This keyword is used to define the steps that are common to all tests in the feature file. 
+	For example, Navigation to Home Page, Click on the Login, Enter User Name and Password, 
+	Click on Submit button are the common steps in almost all web applications.	
+=================================================================================================
+
+Scenario Outline
+	In Gherkin language, scenario outline is the keyword which is used to 
+	run the same scenario multiple times.
+
+	It is also defined as "Scenario outlines are used when the same test is 
+	performed multiple times with a different combination of values."
+===================================================================================================
+PreCondition to Workwith Cucumber:-->
+
+1. Java  [JDK] installation
+2. Eclipse [Java Developement]
+3. Cucumber Jar files 
+4. webdriver jar files
+5. Feature file  plugin
+6. Junit 
+
+
+Where to download cucumber jar files:-->
+
+	https://jar-download.com/artifacts/io.cucumber/cucumber-java
+	download cucumber jar file by selecting version  
+	This action download zip format file
+	Unzip file and configure all jars files to project..
+
+
+Architecture of cucumber project:-->
+
+		ProjectName
+			|
+			src
+			   |
+			   StepDefinitions
+			   TestRunners
+				
+			resource
+			   |
+			   FeatureFiles
+	
+			JavaLibraries
+			SeleniumLibraries
+			CucumberLibraries
+
+
+Step1:--> Create resource folder under project.
+	
+	Navigation:--> Right click on project ----> New ---> Select Source folder
+			---> Enter source folder name as resources click on finish button
+
+
+How to download feature file plugin in eclipse:-->
+
+	1. Open Eclipse
+	2. Open Help Menu
+	3. Select Eclipse Market places
+	4. In market places search for Nature
+	5. Find Nature 0.9 plugin and click Install button
+	6. Follow installation process
+	7. At last it ask to restart eclipse [Just restart eclipse]
+
+How to Create feature file:-->
+		=> In Eclipse create file with  filename.feature extension
+
+
+Write feature using gherkin language:-->
+
+	Feature: Facebook login page
+	Scenario: Verifying login with valid data
+		
+		Given site url at chrome browser
+		When user enter valid username and valid password
+		And click on Sign in button
+		Then Account Page should be Displayed
+========================================================================>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
