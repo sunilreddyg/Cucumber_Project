@@ -6,10 +6,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="resources1/features/usersignup.feature",
-glue="stepdefination")
-public class Junit_Runner_User_signup 
+@CucumberOptions(features="resources/features/background_test.feature",
+glue="stepdefination",monochrome=true,dryRun=false)
+public class Run_BackGround_Test 
 {
-	
-	
+
 }

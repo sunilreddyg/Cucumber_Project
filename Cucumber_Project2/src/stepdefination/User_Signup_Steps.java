@@ -9,7 +9,7 @@ public class User_Signup_Steps
 {
 	
 	
-	@Before
+	//@Before
 	public void Launch_Chrome()
 	{
 		System.out.println("Chrome browser get launched");
@@ -33,6 +33,14 @@ public class User_Signup_Steps
 	    System.out.println("username entered is --> "+UID);
 	    System.out.println("Password entered is --> "+PWD);
 	}
+	
+
+	@When("^Check Remember my username and password checkbox$")
+	public void check_Remember_my_username_and_password_checkbox() throws Throwable 
+	{
+	  System.out.println("Remember username and password checkbox selected");
+	}
+
 
 	@When("^click Create account button$")
 	public void click_Create_account_button() throws Throwable 
@@ -41,11 +49,17 @@ public class User_Signup_Steps
 	}
 
 	@Then("^display message \"([^\"]*)\"$")
-	public void display_message(String arg1) throws Throwable 
+	public void display_message(String act_result) throws Throwable 
 	{
-	    System.out.println("successfull message displayed");
+	    System.out.println("successfull message displayed --> "+act_result);
 	}
 
+	
+	@Then("^error message starts with \"([^\"]*)\" characters$")
+	public void error_message_starts_with_characters(String Result) throws Throwable {
+	    
+		System.out.println("start characters are --> "+Result);
+	}
 
 
 }
